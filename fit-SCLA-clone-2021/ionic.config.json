@@ -1,0 +1,7 @@
+{
+  "name": "fit-SCLA-clone-2021",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
