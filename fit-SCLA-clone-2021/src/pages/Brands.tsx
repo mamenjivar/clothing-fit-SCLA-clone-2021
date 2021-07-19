@@ -25,7 +25,7 @@ const Brands: React.FC = () => {
         {/* Searchbar */}
         <IonSearchbar></IonSearchbar>
 
-        {/* Brand grid */}
+        
         <IonGrid>
           <IonRow>
             <IonCol>
@@ -38,6 +38,7 @@ const Brands: React.FC = () => {
                 <IonCardContent>FLGD</IonCardContent>
               </IonCard>
             </IonCol>
+
             <IonCol>
               <IonCard className="cardBrand">
                 <img
@@ -95,8 +96,8 @@ const Brands: React.FC = () => {
           </IonRow>
         </IonGrid>
       </IonContent>
-
-      {/* Tabs */}
+      
+      {/* bottom navbar */}
       <IonTabBar slot="bottom">
         <IonTabButton>
           <IonIcon icon={appsOutline} />
