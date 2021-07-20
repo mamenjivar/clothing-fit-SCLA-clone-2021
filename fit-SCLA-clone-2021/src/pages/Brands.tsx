@@ -9,9 +9,11 @@ import {
   IonCol,
   IonTabBar,
   IonTabButton,
-  IonIcon
+  IonIcon,
+  IonTabs,
+  IonRouterOutlet,
 } from "@ionic/react";
-import { appsOutline, planetOutline, cartOutline } from 'ionicons/icons';
+import { appsOutline, planetOutline, cartOutline } from "ionicons/icons";
 
 import "./Brands.css";
 
@@ -25,7 +27,6 @@ const Brands: React.FC = () => {
         {/* Searchbar */}
         <IonSearchbar></IonSearchbar>
 
-        
         <IonGrid>
           <IonRow>
             <IonCol>
@@ -96,19 +97,6 @@ const Brands: React.FC = () => {
           </IonRow>
         </IonGrid>
       </IonContent>
-      
-      {/* bottom navbar */}
-      <IonTabBar slot="bottom">
-        <IonTabButton>
-          <IonIcon icon={appsOutline} />
-        </IonTabButton>
-        <IonTabButton>
-          <IonIcon icon={planetOutline} />
-        </IonTabButton>
-        <IonTabButton>
-          <IonIcon icon={cartOutline} />
-        </IonTabButton>
-      </IonTabBar>
     </IonPage>
   );
 };

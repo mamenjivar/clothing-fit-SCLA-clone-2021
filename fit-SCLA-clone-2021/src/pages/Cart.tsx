@@ -7,15 +7,12 @@ import {
     IonCol,
     IonCard,
     IonCardHeader,
-    IonCardTitle,
     IonCardSubtitle,
     IonCardContent,
     IonIcon,
-    IonButton,
-    IonTabBar,
-    IonTabButton
+    IonButton
 } from "@ionic/react";
-import { appsOutline, planetOutline, cartOutline } from 'ionicons/icons';
+import { planetOutline, trashOutline } from 'ionicons/icons';
 
 import "./Cart.css";
 
@@ -23,14 +20,13 @@ const Cart: React.FC = () => {
     return (
         <IonPage>
             <IonContent>
-                <h1 className="ion-text-center">Cart section</h1>
+                <h1 className="ion-text-center">Cart</h1>
 
                 {/* Searchbar */}
                 <IonSearchbar></IonSearchbar>
 
                 {/* shirt with price grid */}
                 <IonGrid>
-                </IonGrid>
                     <IonRow>
                         <IonCol>
                             <IonCard>
@@ -46,13 +42,13 @@ const Cart: React.FC = () => {
                                 <IonCardContent> 
                                         <IonRow>
                                             <IonCol>
-                                                <IonButton className="ion-no-padding" fill="outline" size="default">
-                                                    <IonIcon icon={appsOutline} />
+                                                <IonButton  fill="outline" size="default">
+                                                    <IonIcon icon={planetOutline} />
                                                 </IonButton>
-                                            </IonCol>
-                                            <IonCol>
-                                                <IonButton className="ion-no-padding" fill="solid" color="success" size="default" >
-                                                    <IonIcon icon={cartOutline} />
+                                            {/* </IonCol>
+                                            <IonCol> */}
+                                                <IonButton  fill="solid" color="danger" size="default" >
+                                                    <IonIcon icon={trashOutline} />
                                                 </IonButton>
                                             </IonCol>
                                         </IonRow>
@@ -75,13 +71,13 @@ const Cart: React.FC = () => {
                                 <IonCardContent> 
                                         <IonRow>
                                             <IonCol>
-                                                <IonButton className="ion-no-padding" fill="outline" size="default">
-                                                    <IonIcon icon={appsOutline} />
+                                                <IonButton  fill="outline" size="default">
+                                                    <IonIcon icon={planetOutline} />
                                                 </IonButton>
-                                            </IonCol>
-                                            <IonCol>
-                                                <IonButton className="ion-no-padding" fill="solid" color="success" size="default" >
-                                                    <IonIcon icon={cartOutline} />
+                                            {/* </IonCol>
+                                            <IonCol> */}
+                                                <IonButton  fill="solid" color="danger" size="default" >
+                                                    <IonIcon icon={trashOutline} />
                                                 </IonButton>
                                             </IonCol>
                                         </IonRow>
@@ -104,13 +100,13 @@ const Cart: React.FC = () => {
                                 <IonCardContent> 
                                         <IonRow>
                                             <IonCol>
-                                                <IonButton className="ion-no-padding" fill="outline" size="default">
-                                                    <IonIcon icon={appsOutline} />
+                                                <IonButton  fill="outline" size="default">
+                                                    <IonIcon icon={planetOutline} />
                                                 </IonButton>
-                                            </IonCol>
-                                            <IonCol>
-                                                <IonButton className="ion-no-padding" fill="solid" color="success" size="default" >
-                                                    <IonIcon icon={cartOutline} />
+                                            {/* </IonCol> */}
+                                            {/* <IonCol> */}
+                                                <IonButton  fill="solid" color="danger" size="default" >
+                                                    <IonIcon icon={trashOutline} />
                                                 </IonButton>
                                             </IonCol>
                                         </IonRow>
@@ -118,20 +114,15 @@ const Cart: React.FC = () => {
                             </IonCard>
                         </IonCol>
                     </IonRow>
-            </IonContent>
 
-        {/* bottom navbar */}
-            <IonTabBar slot="bottom">
-                <IonTabButton>
-                <IonIcon icon={appsOutline} />
-                </IonTabButton>
-                <IonTabButton>
-                <IonIcon icon={planetOutline} />
-                </IonTabButton>
-                <IonTabButton>
-                <IonIcon icon={cartOutline} />
-                </IonTabButton>
-            </IonTabBar>
+                    {/* Submit button */}
+                    <IonRow>
+                        <IonCol className="ion-text-center">
+                            <IonButton color="success">Confirm</IonButton>
+                        </IonCol>
+                    </IonRow>
+                </IonGrid>
+            </IonContent>
         </IonPage>
     );
 };
