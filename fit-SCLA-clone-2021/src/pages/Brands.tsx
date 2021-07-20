@@ -6,12 +6,7 @@ import {
   IonCardContent,
   IonGrid,
   IonRow,
-  IonCol,
-  IonTabBar,
-  IonTabButton,
-  IonIcon,
-  IonTabs,
-  IonRouterOutlet,
+  IonCol
 } from "@ionic/react";
 import { appsOutline, planetOutline, cartOutline } from "ionicons/icons";
 
@@ -30,7 +25,7 @@ const Brands: React.FC = () => {
         <IonGrid>
           <IonRow>
             <IonCol>
-              <IonCard className="cardBrand">
+              <IonCard className="cardBrand" href="/apparel">
                 <img
                   src="https://www.logolynx.com/images/logolynx/ff/ff70a6c86033e1760d439ce0ab7609d9.jpeg"
                   alt="nike logo"

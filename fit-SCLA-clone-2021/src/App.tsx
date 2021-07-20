@@ -10,9 +10,14 @@ import {
 import { IonReactRouter } from "@ionic/react-router";
 import { appsOutline, planetOutline, cartOutline } from "ionicons/icons";
 
+// pages
 import Brands from "./pages/Brands";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+import Apparel from "./pages/Apparel";
+
+// components
+import MenuTab from "./components/MenuTab";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -50,36 +55,13 @@ const App: React.FC = () => (
         <Route exact path="/checkout">
           <Checkout />
         </Route>
+        <Route exact path="/Apparel">
+          <Apparel />
+        </Route>
       </IonRouterOutlet>
 
       {/* tabs bottom */}
-      {/* TODO: push this into its own component */}
-      <IonTabs>
-        <IonRouterOutlet>
-          <IonRouterOutlet>
-            <Route exact path="/home">
-              <Brands />
-            </Route>
-            <Route exact path="/cart">
-              <Cart />
-            </Route>
-            <Route exact path="/checkout">
-              <Checkout />
-            </Route>
-          </IonRouterOutlet>
-        </IonRouterOutlet>
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="brands" href="/home">
-            <IonIcon icon={appsOutline} />
-          </IonTabButton>
-          <IonTabButton tab="cart" href="/cart">
-            <IonIcon icon={planetOutline} />
-          </IonTabButton>
-          <IonTabButton tab="checkout" href="/checkout">
-            <IonIcon icon={cartOutline} />
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
+      <MenuTab />
     </IonReactRouter>
   </IonApp>
 );

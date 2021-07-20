@@ -99,13 +99,13 @@ const Cart: React.FC = () => {
                                 </IonCardHeader>
                                 <IonCardContent> 
                                         <IonRow>
-                                            <IonCol>
-                                                <IonButton  fill="outline" size="default">
+                                            <IonCol className="ion-no-padding">
+                                                <IonButton className="ion-no-padding" fill="outline" size="default">
                                                     <IonIcon icon={planetOutline} />
                                                 </IonButton>
                                             {/* </IonCol> */}
                                             {/* <IonCol> */}
-                                                <IonButton  fill="solid" color="danger" size="default" >
+                                                <IonButton className="ion-no-padding" fill="solid" color="danger" size="default" >
                                                     <IonIcon icon={trashOutline} />
                                                 </IonButton>
                                             </IonCol>
@@ -118,7 +118,7 @@ const Cart: React.FC = () => {
                     {/* Submit button */}
                     <IonRow>
                         <IonCol className="ion-text-center">
-                            <IonButton color="success">Confirm</IonButton>
+                            <IonButton shape="round" color="success" href="/checkout">Confirm</IonButton>
                         </IonCol>
                     </IonRow>
                 </IonGrid>
