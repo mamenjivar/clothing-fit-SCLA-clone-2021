@@ -10,17 +10,18 @@ import {
   IonCardSubtitle,
   IonCardContent,
   IonButton,
-  IonIcon,
+  IonIcon
 } from "@ionic/react";
 import { planetOutline, cartOutline } from "ionicons/icons";
 
 const Apparel: React.FC = () => {
   return (
     <IonPage>
-      <IonContent>
-        {/* based on what apparel you clicked */}
-        <h1>FLGD</h1>
+      {/* based on what apparel you clicked */}
+        
 
+      <IonContent>
+          <h1 className="ion-text-center">FLGD</h1>
         <IonGrid>
           <IonRow>
             <IonCol>

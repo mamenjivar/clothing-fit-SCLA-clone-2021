@@ -7,6 +7,7 @@ import { appsOutline, planetOutline, cartOutline } from "ionicons/icons";
 import Brands from '../pages/Brands';
 import Cart from '../pages/Cart';
 import Checkout from '../pages/Checkout';
+import Model from '../pages/Model';
 
 const MenuTab: React.FC = () => {
     return (
@@ -22,13 +23,16 @@ const MenuTab: React.FC = () => {
             <Route exact path="/checkout">
               <Checkout />
             </Route>
+            <Route exact path="/model">
+              <Model />
+            </Route>
           </IonRouterOutlet>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="brands" href="/home">
             <IonIcon icon={appsOutline} />
           </IonTabButton>
-          <IonTabButton tab="model">
+          <IonTabButton tab="model" href="/model">
             <IonIcon icon={planetOutline} />
           </IonTabButton>
           <IonTabButton tab="cart" href="/cart">

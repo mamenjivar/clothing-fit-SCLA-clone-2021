@@ -17,22 +17,19 @@ import {
 import "./Checkout.css";
 
 const Checkout: React.FC = () => {
-    const [ alert, onAlert ] = useState<boolean>();
-
-    const onPurchaseHandler = () => {
-        onAlert(true);
-    }
+  // alert for purchase
+  const [alert, onAlert] = useState<boolean>();
+  const onPurchaseHandler = () => {
+    onAlert(true);
+  };
+  
   return (
     <Fragment>
-        <IonAlert 
-            isOpen={alert!}
-            message="Confirmation Email Has Been Sent"
-            buttons= {
-                [
-                    { text: "Ok", handler: () => onAlert(false)}
-                ]
-            }
-        />
+      <IonAlert
+        isOpen={alert!}
+        message="Confirmation Email Has Been Sent"
+        buttons={[{ text: "Ok", handler: () => onAlert(false) }]}
+      />
       <IonPage>
         <IonContent>
           <h1 className="ion-text-center">Order Summary</h1>
@@ -65,7 +62,11 @@ const Checkout: React.FC = () => {
             </IonRow>
             <IonRow>
               <IonCol className="ion-text-center">
-                <IonButton onClick={onPurchaseHandler} shape="round" color="success">
+                <IonButton
+                  onClick={onPurchaseHandler}
+                  shape="round"
+                  color="success"
+                >
                   Checkout
                 </IonButton>
               </IonCol>

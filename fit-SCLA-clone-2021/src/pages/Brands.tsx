@@ -8,7 +8,6 @@ import {
   IonRow,
   IonCol
 } from "@ionic/react";
-import { appsOutline, planetOutline, cartOutline } from "ionicons/icons";
 
 import "./Brands.css";
 
@@ -36,7 +35,7 @@ const Brands: React.FC = () => {
             </IonCol>
 
             <IonCol>
-              <IonCard className="cardBrand">
+              <IonCard className="cardBrand" href="/apparel">
                 <img
                   src="https://www.logolynx.com/images/logolynx/ff/ff70a6c86033e1760d439ce0ab7609d9.jpeg"
                   alt="nike logo"
@@ -48,7 +47,7 @@ const Brands: React.FC = () => {
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonCard className="cardBrand">
+              <IonCard className="cardBrand" href="/apparel">
                 <img
                   src="https://www.logolynx.com/images/logolynx/ff/ff70a6c86033e1760d439ce0ab7609d9.jpeg"
                   alt="nike logo"
@@ -58,7 +57,7 @@ const Brands: React.FC = () => {
               </IonCard>
             </IonCol>
             <IonCol>
-              <IonCard className="cardBrand">
+              <IonCard className="cardBrand" href="/apparel">
                 <img
                   src="https://www.logolynx.com/images/logolynx/ff/ff70a6c86033e1760d439ce0ab7609d9.jpeg"
                   alt="nike logo"
@@ -70,7 +69,7 @@ const Brands: React.FC = () => {
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonCard className="cardBrand">
+              <IonCard className="cardBrand" href="/apparel">
                 <img
                   src="https://www.logolynx.com/images/logolynx/ff/ff70a6c86033e1760d439ce0ab7609d9.jpeg"
                   alt="nike logo"
@@ -80,7 +79,7 @@ const Brands: React.FC = () => {
               </IonCard>
             </IonCol>
             <IonCol>
-              <IonCard className="cardBrand">
+              <IonCard className="cardBrand" href="/apparel">
                 <img
                   src="https://www.logolynx.com/images/logolynx/ff/ff70a6c86033e1760d439ce0ab7609d9.jpeg"
                   alt="nike logo"

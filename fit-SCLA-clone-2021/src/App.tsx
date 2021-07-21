@@ -1,20 +1,16 @@
 import { Redirect, Route } from "react-router-dom";
 import {
   IonApp,
-  IonRouterOutlet,
-  IonTabs,
-  IonTabBar,
-  IonTabButton,
-  IonIcon,
+  IonRouterOutlet
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
-import { appsOutline, planetOutline, cartOutline } from "ionicons/icons";
 
 // pages
 import Brands from "./pages/Brands";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Apparel from "./pages/Apparel";
+import Model from './pages/Model';
 
 // components
 import MenuTab from "./components/MenuTab";
@@ -55,8 +51,11 @@ const App: React.FC = () => (
         <Route exact path="/checkout">
           <Checkout />
         </Route>
-        <Route exact path="/Apparel">
+        <Route exact path="/apparel">
           <Apparel />
+        </Route>
+        <Route exact path="/model">
+          <Model />
         </Route>
       </IonRouterOutlet>
 
