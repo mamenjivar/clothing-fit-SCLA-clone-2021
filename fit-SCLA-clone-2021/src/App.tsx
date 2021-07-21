@@ -39,11 +39,11 @@ const App: React.FC = () => (
     {/* general routes */}
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/home">
+        <Route exact path="/brands">
           <Brands />
         </Route>
         <Route exact path="/">
-          <Redirect to="/home" />
+          <Redirect to="/brands" />
         </Route>
         <Route exact path="/cart">
           <Cart />

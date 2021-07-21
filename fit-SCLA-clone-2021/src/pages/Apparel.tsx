@@ -109,6 +109,7 @@ const Apparel: React.FC = () => {
                   <IonRow>
                     <IonCol className="ion-no-padding">
                       <IonButton
+                        href="/cart"
                         className="ion-no-padding"
                         fill="outline"
                         size="default"
