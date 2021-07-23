@@ -7,8 +7,8 @@ import SizeMatch from './pages/SizeMatch';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <SizeMatch />
+    <App />
+    {/* <SizeMatch /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

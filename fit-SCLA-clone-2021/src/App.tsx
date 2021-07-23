@@ -18,6 +18,7 @@ import Checkout from "./pages/Checkout";
 import Apparel from "./pages/Apparel";
 import Model from "./pages/Model";
 import SizeMatch from "./pages/SizeMatch";
+import Login from "./pages/Login";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -44,6 +45,9 @@ const App: React.FC = () => {
       <IonReactRouter>
         <IonTabs>
           <IonRouterOutlet>
+            <Route exact path="/login">
+              <Login />
+            </Route>
             <Route exact path="/sizing">
               <SizeMatch />
             </Route>

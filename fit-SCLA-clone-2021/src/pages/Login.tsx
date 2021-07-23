@@ -1,22 +1,22 @@
 import React from "react";
 import {
+  IonCol,
   IonContent,
   IonGrid,
   IonPage,
   IonRow,
-  IonCol,
   IonItem,
   IonLabel,
   IonInput,
   IonButton,
 } from "@ionic/react";
 
-const SizeMatch: React.FC = () => {
+const Login: React.FC = () => {
   return (
     <IonPage>
-      <IonContent className="ion-text-center">
+      <IonContent>
         <IonGrid>
-          <IonRow>
+          <IonRow className="ion-text-center">
             <IonCol>
               <img
                 className="ion-text-center"
@@ -28,30 +28,20 @@ const SizeMatch: React.FC = () => {
           </IonRow>
           <IonRow>
             <IonCol>
-              <h1 className="ion-text-center">Size Match</h1>
-            </IonCol>
-          </IonRow>
-
-          <IonRow>
-            <IonCol>
               <IonItem>
-                <IonLabel>Height</IonLabel>
+                <IonLabel>Name</IonLabel>
                 <IonInput></IonInput>
               </IonItem>
               <IonItem>
-                <IonLabel>Weight</IonLabel>
-                <IonInput></IonInput>
-              </IonItem>
-              <IonItem>
-                <IonLabel>Age</IonLabel>
+                <IonLabel>Email</IonLabel>
                 <IonInput></IonInput>
               </IonItem>
             </IonCol>
           </IonRow>
-          <IonRow className="ion-padding-top">
+          <IonRow className="ion-text-center">
             <IonCol>
-              <IonButton color="warning" fill="outline" routerLink="/brands">
-                Confirm
+              <IonButton color="warning" shape="round" routerLink="/sizing">
+                LOGIN
               </IonButton>
             </IonCol>
           </IonRow>
@@ -61,4 +51,4 @@ const SizeMatch: React.FC = () => {
   );
 };
 
-export default SizeMatch;
+export default Login;
