@@ -11,6 +11,11 @@ import {
   IonPage,
   IonRow,
   IonAlert,
+  IonHeader,
+  IonToolbar, 
+  IonButtons,
+  IonBackButton,
+  IonTitle
 } from "@ionic/react";
 
 // css
@@ -31,6 +36,14 @@ const Checkout: React.FC = () => {
         buttons={[{ text: "Ok", handler: () => onAlert(false) }]}
       />
       <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="/brands"/>
+          </IonButtons>
+          <IonTitle>FLGD</IonTitle>
+        </IonToolbar>
+      </IonHeader>
         <IonContent>
           <h1 className="ion-text-center">Order Summary</h1>
 

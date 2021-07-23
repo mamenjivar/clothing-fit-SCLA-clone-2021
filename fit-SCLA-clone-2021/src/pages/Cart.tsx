@@ -118,7 +118,7 @@ const Cart: React.FC = () => {
                     {/* Submit button */}
                     <IonRow>
                         <IonCol className="ion-text-center">
-                            <IonButton shape="round" color="success" href="/checkout">Confirm</IonButton>
+                            <IonButton shape="round" color="success" routerLink="/checkout">Confirm</IonButton>
                         </IonCol>
                     </IonRow>
                 </IonGrid>

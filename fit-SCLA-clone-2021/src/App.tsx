@@ -1,19 +1,22 @@
+import React from "react";
 import { Redirect, Route } from "react-router-dom";
 import {
   IonApp,
-  IonRouterOutlet
+  IonIcon,
+  IonRouterOutlet,
+  IonTabBar,
+  IonTabButton,
+  IonTabs,
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
+import { appsOutline, cartOutline, planetOutline } from "ionicons/icons";
 
 // pages
 import Brands from "./pages/Brands";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Apparel from "./pages/Apparel";
-import Model from './pages/Model';
-
-// components
-import MenuTab from "./components/MenuTab";
+import Model from "./pages/Model";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -34,35 +37,45 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 // import './theme/variables.css';
 
-const App: React.FC = () => (
-  <IonApp>
-    {/* general routes */}
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/brands">
-          <Brands />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/brands" />
-        </Route>
-        <Route exact path="/cart">
-          <Cart />
-        </Route>
-        <Route exact path="/checkout">
-          <Checkout />
-        </Route>
-        <Route exact path="/apparel">
-          <Apparel />
-        </Route>
-        <Route exact path="/model">
-          <Model />
-        </Route>
-      </IonRouterOutlet>
+const App: React.FC = () => {
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <IonTabs>
+          <IonRouterOutlet>
+            <Route exact path="/brands">
+              <Brands />
+            </Route>
+            <Route exact path="/cart">
+              <Cart />
+            </Route>
+            <Route exact path="/checkout">
+              <Checkout />
+            </Route>
+            <Route exact path="/apparel">
+              <Apparel />
+            </Route>
+            <Route exact path="/model">
+              <Model />
+            </Route>
+            <Redirect to="/brands" />
+          </IonRouterOutlet>
 
-      {/* tabs bottom */}
-      <MenuTab />
-    </IonReactRouter>
-  </IonApp>
-);
+          <IonTabBar slot="bottom">
+            <IonTabButton tab="brands" href="/brands">
+              <IonIcon icon={appsOutline} />
+            </IonTabButton>
+            <IonTabButton tab="model" href="/model">
+              <IonIcon icon={planetOutline} />
+            </IonTabButton>
+            <IonTabButton tab="cart" href="/cart">
+              <IonIcon icon={cartOutline} />
+            </IonTabButton>
+          </IonTabBar>
+        </IonTabs>
+      </IonReactRouter>
+    </IonApp>
+  );
+};
 
 export default App;

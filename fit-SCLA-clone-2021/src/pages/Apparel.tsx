@@ -10,18 +10,30 @@ import {
   IonCardSubtitle,
   IonCardContent,
   IonButton,
-  IonIcon
+  IonIcon,
+  IonHeader,
+  IonToolbar,
+  IonButtons,
+  IonBackButton,
+  IonTitle
 } from "@ionic/react";
 import { planetOutline, cartOutline } from "ionicons/icons";
 
 const Apparel: React.FC = () => {
+
   return (
     <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="/brands"/>
+          </IonButtons>
+          <IonTitle>FLGD</IonTitle>
+        </IonToolbar>
+      </IonHeader>
       {/* based on what apparel you clicked */}
-        
 
       <IonContent>
-          <h1 className="ion-text-center">FLGD</h1>
         <IonGrid>
           <IonRow>
             <IonCol>
@@ -45,8 +57,6 @@ const Apparel: React.FC = () => {
                       <IonButton fill="outline" size="default">
                         <IonIcon icon={planetOutline} />
                       </IonButton>
-                      {/* </IonCol>
-                        <IonCol> */}
                       <IonButton fill="solid" color="success" size="default">
                         <IonIcon icon={cartOutline} />
                       </IonButton>
@@ -78,8 +88,6 @@ const Apparel: React.FC = () => {
                       <IonButton fill="outline" size="default">
                         <IonIcon icon={planetOutline} />
                       </IonButton>
-                      {/* </IonCol>
-                                            <IonCol> */}
                       <IonButton fill="solid" color="success" size="default">
                         <IonIcon icon={cartOutline} />
                       </IonButton>
@@ -130,15 +138,6 @@ const Apparel: React.FC = () => {
                   </IonRow>
                 </IonCardContent>
               </IonCard>
-            </IonCol>
-          </IonRow>
-
-          {/* Submit button */}
-          <IonRow>
-            <IonCol className="ion-text-center">
-              <IonButton shape="round" color="success" href="/checkout">
-                Confirm
-              </IonButton>
             </IonCol>
           </IonRow>
         </IonGrid>
