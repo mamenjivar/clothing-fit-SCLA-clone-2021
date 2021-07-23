@@ -41,11 +41,10 @@ const Checkout: React.FC = () => {
           <IonButtons slot="start">
             <IonBackButton defaultHref="/brands"/>
           </IonButtons>
-          <IonTitle>FLGD</IonTitle>
+          <IonTitle>Order Summary</IonTitle>
         </IonToolbar>
       </IonHeader>
         <IonContent>
-          <h1 className="ion-text-center">Order Summary</h1>
 
           {/* loop through array and see orders */}
           <h4>ACTIVE ORDERS</h4>
