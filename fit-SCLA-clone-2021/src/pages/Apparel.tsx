@@ -19,6 +19,8 @@ import {
 } from "@ionic/react";
 import { planetOutline, cartOutline } from "ionicons/icons";
 
+import CheckoutCart from '../util/CheckoutCart';
+
 const clothesToChoose = [
   {
     id: "01",
@@ -50,14 +52,14 @@ const clothesToChoose = [
   },
 ];
 
-interface Checkoutcart {
-  id?: string;
-  image?: string;
-  name?: string;
-  price?: string;
-}
+// interface Checkoutcart {
+//   id?: string;
+//   image?: string;
+//   name?: string;
+//   price?: string;
+// }
 
-const Apparel: React.FC<{ passUpApp: (obj: Checkoutcart) => void }> = (
+const Apparel: React.FC<{ passUpApp: (obj: CheckoutCart) => void }> = (
   props
 ) => {
   const addToCart = (id: string) => {

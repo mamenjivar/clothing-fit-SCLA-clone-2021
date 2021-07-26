@@ -17,14 +17,16 @@ import { planetOutline, trashOutline } from "ionicons/icons";
 
 import "./Cart.css";
 
-interface Checkoutcart {
-  id?: string;
-  image?: string;
-  name?: string;
-  price?: string;
-}
+import CheckoutCart from '../util/CheckoutCart';
 
-const Cart: React.FC<{ shoppingCart?: Checkoutcart[] }> = (props) => {
+// interface Checkoutcart {
+//   id?: string;
+//   image?: string;
+//   name?: string;
+//   price?: string;
+// }
+
+const Cart: React.FC<{ shoppingCart?: CheckoutCart[] }> = (props) => {
   return (
     <IonPage>
       <IonContent>
@@ -35,7 +37,7 @@ const Cart: React.FC<{ shoppingCart?: Checkoutcart[] }> = (props) => {
 
         {/* shirt with price grid */}
         <IonGrid>
-          {props.shoppingCart?.map((i: Checkoutcart) => (
+          {props.shoppingCart?.map((i: CheckoutCart) => (
             <Fragment>
               <IonRow>
                 <IonCol>
