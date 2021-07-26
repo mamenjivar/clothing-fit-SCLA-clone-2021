@@ -16,7 +16,14 @@ import { planetOutline, trashOutline } from 'ionicons/icons';
 
 import "./Cart.css";
 
-const Cart: React.FC = () => {
+interface Checkoutcart {
+    id?: string;
+    image?: string;
+    name?: string;
+    price?: string;
+  };
+
+const Cart: React.FC<{shoppingCart?: Checkoutcart}> = (props) => {
     return (
         <IonPage>
             <IonContent>
@@ -30,14 +37,14 @@ const Cart: React.FC = () => {
                     <IonRow>
                         <IonCol>
                             <IonCard>
-                                <img src="https://cdn.shopify.com/s/files/1/0250/0714/products/Go-To-Tee-010100002C8-lake-green-flat_300x.jpg?v=1614195208" alt="shirt 01" width="150"/>
+                                <img src={props.shoppingCart?.image} alt="shirt 01" width="150"/>
                             </IonCard>
                         </IonCol>
                         <IonCol className="ion-no-padding">
                             <IonCard className="item-info-card">
                                 <IonCardHeader>
-                                    <IonCardSubtitle>Mens T-Shirt</IonCardSubtitle>
-                                    <IonCardSubtitle>$19.99</IonCardSubtitle>
+                                    <IonCardSubtitle>{props.shoppingCart?.name}</IonCardSubtitle>
+                                    <IonCardSubtitle>{props.shoppingCart?.price}</IonCardSubtitle>
                                 </IonCardHeader>
                                 <IonCardContent> 
                                         <IonRow>

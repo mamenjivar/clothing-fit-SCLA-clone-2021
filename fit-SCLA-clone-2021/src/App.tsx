@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Redirect, Route } from "react-router-dom";
 import {
   IonApp,
@@ -39,7 +39,22 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 // import './theme/variables.css';
 
+interface Checkoutcart {
+  id?: string;
+  image?: string;
+  name?: string;
+  price?: string;
+};
+
 const App: React.FC = () => {
+  const [cart, setCart] = useState<Checkoutcart>();
+
+  const addToCart = (obj: Checkoutcart) => {
+    // setCart(obj);
+    setCart(obj)
+    console.log("from app: " + JSON.stringify(cart));
+  }
+
   return (
     <IonApp>
       <IonReactRouter>
@@ -55,13 +70,13 @@ const App: React.FC = () => {
               <Brands />
             </Route>
             <Route exact path="/cart">
-              <Cart />
+              <Cart shoppingCart={cart}/>
             </Route>
             <Route exact path="/checkout">
               <Checkout />
-            </Route>
+            </Route> 
             <Route exact path="/apparel">
-              <Apparel />
+              <Apparel passUpApp={addToCart}/>
             </Route>
             <Route exact path="/model">
               <Model />
