@@ -24,10 +24,6 @@ interface Checkoutcart {
   price?: string;
 }
 
-interface checkoutCartProp {
-  checkout: Checkoutcart[];
-}
-
 const Cart: React.FC<{ shoppingCart?: Checkoutcart[] }> = (props) => {
   return (
     <IonPage>
@@ -39,7 +35,7 @@ const Cart: React.FC<{ shoppingCart?: Checkoutcart[] }> = (props) => {
 
         {/* shirt with price grid */}
         <IonGrid>
-          {props.shoppingCart?.map((i: Checkoutcart) => 
+          {props.shoppingCart?.map((i: Checkoutcart) => (
             <Fragment>
               <IonRow>
                 <IonCol>
@@ -50,12 +46,8 @@ const Cart: React.FC<{ shoppingCart?: Checkoutcart[] }> = (props) => {
                 <IonCol className="ion-no-padding">
                   <IonCard className="item-info-card">
                     <IonCardHeader>
-                      <IonCardSubtitle>
-                        {i.name}
-                      </IonCardSubtitle>
-                      <IonCardSubtitle>
-                        {i.price}
-                      </IonCardSubtitle>
+                      <IonCardSubtitle>{i.name}</IonCardSubtitle>
+                      <IonCardSubtitle>{i.price}</IonCardSubtitle>
                     </IonCardHeader>
                     <IonCardContent>
                       <IonRow>
@@ -63,8 +55,6 @@ const Cart: React.FC<{ shoppingCart?: Checkoutcart[] }> = (props) => {
                           <IonButton fill="outline" size="default">
                             <IonIcon icon={planetOutline} />
                           </IonButton>
-                          {/* </IonCol>
-                                            <IonCol> */}
                           <IonButton fill="solid" color="danger" size="default">
                             <IonIcon icon={trashOutline} />
                           </IonButton>
@@ -75,9 +65,7 @@ const Cart: React.FC<{ shoppingCart?: Checkoutcart[] }> = (props) => {
                 </IonCol>
               </IonRow>
             </Fragment>
-          )}
-
-         
+          ))}
 
           {/* Submit button */}
           <IonRow>

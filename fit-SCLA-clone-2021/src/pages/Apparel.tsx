@@ -63,9 +63,6 @@ const Apparel: React.FC<{ passUpApp: (obj: Checkoutcart) => void }> = (
   const addToCart = (id: string) => {
     let appareling = clothesToChoose.filter((a) => a.id === id)[0];
     props.passUpApp(appareling);
-    // props.passUpApp(clothesToChoose[3]);
-    // props.passUpApp(id);
-    // console.log('from apparel' + JSON.stringify(clothesToChoose[0]))
   };
 
   return (
