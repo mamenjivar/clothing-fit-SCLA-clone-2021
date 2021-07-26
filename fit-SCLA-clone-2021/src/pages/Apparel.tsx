@@ -86,7 +86,7 @@ const Apparel: React.FC<{ passUpApp: (obj: Checkoutcart) => void }> = (
             <IonCol>
               <IonCard>
                 <img
-                  src="https://cdn.shopify.com/s/files/1/0250/0714/products/Go-To-Tee-010100002C8-lake-green-flat_300x.jpg?v=1614195208"
+                  src="https://imgprd19.hobbylobby.com/2/d2/2d/2d22d4c34e27b131ae4b74b6a6ba9a035b7eabae/350Wx350H-422790-0320.jpg"
                   alt="shirt 01"
                   width="150"
                 />
@@ -158,7 +158,7 @@ const Apparel: React.FC<{ passUpApp: (obj: Checkoutcart) => void }> = (
             <IonCol>
               <IonCard>
                 <img
-                  src="https://cdn.shopify.com/s/files/1/0250/0714/products/Go-To-Tee-010100002C8-lake-green-flat_300x.jpg?v=1614195208"
+                  src="https://imgprd19.hobbylobby.com/3/7d/79/37d79e89dfc9b9948dbe7357e04dfb04402d6d84/350Wx350H-601666-0320.jpg"
                   alt="shirt 01"
                   width="150"
                 />

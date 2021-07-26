@@ -46,13 +46,19 @@ interface Checkoutcart {
   price?: string;
 };
 
+// interface CheckoutcartArray {
+//   checkOut: Checkoutcart[]
+// }
+
 const App: React.FC = () => {
-  const [cart, setCart] = useState<Checkoutcart>();
+  // const [cart, setCart] = useState<CheckoutcartArray>();
+  const [item, setItem] = useState<Checkoutcart[]>([]);
 
   const addToCart = (obj: Checkoutcart) => {
     // setCart(obj);
-    setCart(obj)
-    console.log("from app: " + JSON.stringify(cart));
+    setItem([...item, obj]);
+    // setCart([...cart?.checkOut, item]);
+    // console.log("from app: " + JSON.stringify(cart));
   }
 
   return (
@@ -70,7 +76,7 @@ const App: React.FC = () => {
               <Brands />
             </Route>
             <Route exact path="/cart">
-              <Cart shoppingCart={cart}/>
+              <Cart shoppingCart={item}/>
             </Route>
             <Route exact path="/checkout">
               <Checkout />

@@ -1,137 +1,96 @@
+import React, { Fragment } from "react";
 import {
-    IonPage,
-    IonContent,
-    IonSearchbar,
-    IonGrid,
-    IonRow,
-    IonCol,
-    IonCard,
-    IonCardHeader,
-    IonCardSubtitle,
-    IonCardContent,
-    IonIcon,
-    IonButton
+  IonPage,
+  IonContent,
+  IonSearchbar,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonCard,
+  IonCardHeader,
+  IonCardSubtitle,
+  IonCardContent,
+  IonIcon,
+  IonButton,
 } from "@ionic/react";
-import { planetOutline, trashOutline } from 'ionicons/icons';
+import { planetOutline, trashOutline } from "ionicons/icons";
 
 import "./Cart.css";
 
 interface Checkoutcart {
-    id?: string;
-    image?: string;
-    name?: string;
-    price?: string;
-  };
+  id?: string;
+  image?: string;
+  name?: string;
+  price?: string;
+}
 
-const Cart: React.FC<{shoppingCart?: Checkoutcart}> = (props) => {
-    return (
-        <IonPage>
-            <IonContent>
-                <h1 className="ion-text-center">Cart</h1>
+interface checkoutCartProp {
+  checkout: Checkoutcart[];
+}
 
-                {/* Searchbar */}
-                <IonSearchbar></IonSearchbar>
+const Cart: React.FC<{ shoppingCart?: Checkoutcart[] }> = (props) => {
+  return (
+    <IonPage>
+      <IonContent>
+        <h1 className="ion-text-center">Cart</h1>
 
-                {/* shirt with price grid */}
-                <IonGrid>
-                    <IonRow>
+        {/* Searchbar */}
+        <IonSearchbar></IonSearchbar>
+
+        {/* shirt with price grid */}
+        <IonGrid>
+          {props.shoppingCart?.map((i: Checkoutcart) => 
+            <Fragment>
+              <IonRow>
+                <IonCol>
+                  <IonCard>
+                    <img src={i.image} alt="shirt 01" width="150" />
+                  </IonCard>
+                </IonCol>
+                <IonCol className="ion-no-padding">
+                  <IonCard className="item-info-card">
+                    <IonCardHeader>
+                      <IonCardSubtitle>
+                        {i.name}
+                      </IonCardSubtitle>
+                      <IonCardSubtitle>
+                        {i.price}
+                      </IonCardSubtitle>
+                    </IonCardHeader>
+                    <IonCardContent>
+                      <IonRow>
                         <IonCol>
-                            <IonCard>
-                                <img src={props.shoppingCart?.image} alt="shirt 01" width="150"/>
-                            </IonCard>
-                        </IonCol>
-                        <IonCol className="ion-no-padding">
-                            <IonCard className="item-info-card">
-                                <IonCardHeader>
-                                    <IonCardSubtitle>{props.shoppingCart?.name}</IonCardSubtitle>
-                                    <IonCardSubtitle>{props.shoppingCart?.price}</IonCardSubtitle>
-                                </IonCardHeader>
-                                <IonCardContent> 
-                                        <IonRow>
-                                            <IonCol>
-                                                <IonButton  fill="outline" size="default">
-                                                    <IonIcon icon={planetOutline} />
-                                                </IonButton>
-                                            {/* </IonCol>
+                          <IonButton fill="outline" size="default">
+                            <IonIcon icon={planetOutline} />
+                          </IonButton>
+                          {/* </IonCol>
                                             <IonCol> */}
-                                                <IonButton  fill="solid" color="danger" size="default" >
-                                                    <IonIcon icon={trashOutline} />
-                                                </IonButton>
-                                            </IonCol>
-                                        </IonRow>
-                                </IonCardContent>
-                            </IonCard>
+                          <IonButton fill="solid" color="danger" size="default">
+                            <IonIcon icon={trashOutline} />
+                          </IonButton>
                         </IonCol>
-                    </IonRow>
-                    <IonRow>
-                        <IonCol>
-                            <IonCard>
-                                <img src="https://cdn.shopify.com/s/files/1/0250/0714/products/Go-To-Tee-010100002C8-lake-green-flat_300x.jpg?v=1614195208" alt="shirt 01" width="150"/>
-                            </IonCard>
-                        </IonCol>
-                        <IonCol className="ion-no-padding">
-                            <IonCard className="item-info-card">
-                                <IonCardHeader>
-                                    <IonCardSubtitle>Mens T-Shirt</IonCardSubtitle>
-                                    <IonCardSubtitle>$19.99</IonCardSubtitle>
-                                </IonCardHeader>
-                                <IonCardContent> 
-                                        <IonRow>
-                                            <IonCol>
-                                                <IonButton  fill="outline" size="default">
-                                                    <IonIcon icon={planetOutline} />
-                                                </IonButton>
-                                            {/* </IonCol>
-                                            <IonCol> */}
-                                                <IonButton  fill="solid" color="danger" size="default" >
-                                                    <IonIcon icon={trashOutline} />
-                                                </IonButton>
-                                            </IonCol>
-                                        </IonRow>
-                                </IonCardContent>
-                            </IonCard>
-                        </IonCol>
-                    </IonRow>
-                    <IonRow>
-                        <IonCol>
-                            <IonCard>
-                                <img src="https://cdn.shopify.com/s/files/1/0250/0714/products/Go-To-Tee-010100002C8-lake-green-flat_300x.jpg?v=1614195208" alt="shirt 01" width="150"/>
-                            </IonCard>
-                        </IonCol>
-                        <IonCol className="ion-no-padding">
-                            <IonCard className="item-info-card">
-                                <IonCardHeader>
-                                    <IonCardSubtitle>Mens T-Shirt</IonCardSubtitle>
-                                    <IonCardSubtitle>$19.99</IonCardSubtitle>
-                                </IonCardHeader>
-                                <IonCardContent> 
-                                        <IonRow>
-                                            <IonCol className="ion-no-padding">
-                                                <IonButton className="ion-no-padding" fill="outline" size="default">
-                                                    <IonIcon icon={planetOutline} />
-                                                </IonButton>
-                                            {/* </IonCol> */}
-                                            {/* <IonCol> */}
-                                                <IonButton className="ion-no-padding" fill="solid" color="danger" size="default" >
-                                                    <IonIcon icon={trashOutline} />
-                                                </IonButton>
-                                            </IonCol>
-                                        </IonRow>
-                                </IonCardContent>
-                            </IonCard>
-                        </IonCol>
-                    </IonRow>
+                      </IonRow>
+                    </IonCardContent>
+                  </IonCard>
+                </IonCol>
+              </IonRow>
+            </Fragment>
+          )}
 
-                    {/* Submit button */}
-                    <IonRow>
-                        <IonCol className="ion-text-center">
-                            <IonButton shape="round" color="success" routerLink="/checkout">Confirm</IonButton>
-                        </IonCol>
-                    </IonRow>
-                </IonGrid>
-            </IonContent>
-        </IonPage>
-    );
+         
+
+          {/* Submit button */}
+          <IonRow>
+            <IonCol className="ion-text-center">
+              <IonButton shape="round" color="success" routerLink="/checkout">
+                Confirm
+              </IonButton>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
+      </IonContent>
+    </IonPage>
+  );
 };
 
 export default Cart;
