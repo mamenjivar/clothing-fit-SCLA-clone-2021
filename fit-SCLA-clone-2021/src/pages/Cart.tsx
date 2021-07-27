@@ -17,14 +17,8 @@ import { planetOutline, trashOutline } from "ionicons/icons";
 
 import "./Cart.css";
 
+// interface
 import CheckoutCart from '../util/CheckoutCart';
-
-// interface Checkoutcart {
-//   id?: string;
-//   image?: string;
-//   name?: string;
-//   price?: string;
-// }
 
 const Cart: React.FC<{ shoppingCart?: CheckoutCart[] }> = (props) => {
   return (

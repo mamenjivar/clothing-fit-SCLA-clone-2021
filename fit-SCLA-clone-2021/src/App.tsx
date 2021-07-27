@@ -39,14 +39,8 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 // import './theme/variables.css';
 
+// interface
 import CheckoutCart from './util/CheckoutCart';
-
-// interface Checkoutcart {
-//   id?: string;
-//   image?: string;
-//   name?: string;
-//   price?: string;
-// };
 
 const App: React.FC = () => {
   const [item, setItem] = useState<CheckoutCart[]>([]);
