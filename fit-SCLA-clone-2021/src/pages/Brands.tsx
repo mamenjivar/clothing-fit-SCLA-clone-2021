@@ -12,32 +12,6 @@ import {
 
 import "./Brands.css";
 
-// local DB FLGD
-const FLGD = [
-  {
-    "price": "$25.00",
-    "type": "Men's T-Shirt",
-    "image": "https://cdn.shopify.com/s/files/1/0250/0714/products/Go-To-Tee-010100002C8-lake-green-flat_300x.jpg?v=1614195208"
-  },
-  {
-    "price": "$32.00",
-    "type": "Men's T-Shirt",
-    "image": "https://cdn.shopify.com/s/files/1/0250/0714/products/Go-To-Tee-010100002C8-lake-green-flat_300x.jpg?v=1614195208"
-  },
-  {
-    "price": "$15.99",
-    "type": "Men's T-Shirt",
-    "image": "https://cdn.shopify.com/s/files/1/0250/0714/products/Go-To-Tee-010100002C8-lake-green-flat_300x.jpg?v=1614195208"
-  },
-  {
-    "price": "$19.99",
-    "type": "Men's T-Shirt",
-    "image": "https://cdn.shopify.com/s/files/1/0250/0714/products/Go-To-Tee-010100002C8-lake-green-flat_300x.jpg?v=1614195208"
-  },
-];
-
-const brandName = "Purple Gear";
-
 const Brands: React.FC = () => {
 
   return (

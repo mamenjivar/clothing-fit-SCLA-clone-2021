@@ -1,8 +1,8 @@
 interface CheckoutCart {
-    id?: string;
-    image?: string;
-    name?: string;
-    price?: string;
-  };
+  id?: string;
+  image?: string;
+  name?: string;
+  price?: string;
+}
 
-  export default CheckoutCart;
+export default CheckoutCart;
