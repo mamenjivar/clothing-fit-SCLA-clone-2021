@@ -43,7 +43,6 @@ const Apparel: React.FC<{ passUpApp: (obj: CheckoutCart) => void }> = (
           <IonTitle>FLGD</IonTitle>
         </IonToolbar>
       </IonHeader>
-      {/* based on what apparel you clicked */}
 
       <IonContent>
         <IonGrid>
@@ -152,8 +151,6 @@ const Apparel: React.FC<{ passUpApp: (obj: CheckoutCart) => void }> = (
                       >
                         <IonIcon icon={planetOutline} />
                       </IonButton>
-                      {/* </IonCol> */}
-                      {/* <IonCol> */}
                       <IonButton
                         className="ion-no-padding"
                         fill="solid"
