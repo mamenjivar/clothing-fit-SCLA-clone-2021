@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import {
   IonCol,
   IonContent,
@@ -10,8 +10,19 @@ import {
   IonInput,
   IonButton,
 } from "@ionic/react";
+import UIContext from '../util/Context-API-login';
 
 const Login: React.FC = () => {
+  const { setShowTabs } = useContext(UIContext);
+
+  useEffect(() => {
+    setShowTabs(false);
+
+    return () => {
+      setShowTabs(true);
+    };
+  });
+
   return (
     <IonPage>
       <IonContent>

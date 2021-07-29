@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import {
   IonContent,
   IonGrid,
@@ -10,8 +10,19 @@ import {
   IonInput,
   IonButton,
 } from "@ionic/react";
+import UIContext from '../util/Context-API-login';
 
 const SizeMatch: React.FC = () => {
+  const { setShowTabs } = useContext(UIContext);
+
+  useEffect(() => {
+    setShowTabs(false);
+
+    return () => {
+      setShowTabs(true);
+    }
+  })
+
   return (
     <IonPage>
       <IonContent className="ion-text-center">
@@ -50,7 +61,7 @@ const SizeMatch: React.FC = () => {
           </IonRow>
           <IonRow className="ion-padding-top">
             <IonCol>
-              <IonButton color="warning" fill="outline" routerLink="/brands">
+              <IonButton color="warning" fill="outline" href="/brands">
                 Confirm
               </IonButton>
             </IonCol>

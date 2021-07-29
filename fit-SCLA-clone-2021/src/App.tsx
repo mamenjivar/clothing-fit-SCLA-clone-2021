@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Redirect, Route } from "react-router-dom";
 import {
   IonApp,
@@ -41,9 +41,13 @@ import "@ionic/react/css/display.css";
 
 // interface
 import CheckoutCart from './util/CheckoutCart';
+import UIContext from './util/Context-API-login';
 
 const App: React.FC = () => {
   const [item, setItem] = useState<CheckoutCart[]>([]);
+  const { showTabs } = useContext(UIContext);
+
+  let tabBar = showTabs ? undefined : { display: 'none' };
 
   const addToCart = (obj: CheckoutCart) => {
     setItem([...item, obj]);
@@ -78,7 +82,7 @@ const App: React.FC = () => {
             <Redirect to="/brands" />
           </IonRouterOutlet>
 
-          <IonTabBar slot="bottom">
+          <IonTabBar slot="bottom" style={tabBar}>
             <IonTabButton tab="brands" href="/brands">
               <IonIcon icon={appsOutline} />
             </IonTabButton>
