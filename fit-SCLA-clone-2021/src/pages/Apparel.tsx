@@ -65,21 +65,17 @@ const Apparel: React.FC<{ passUpApp: (obj: CheckoutCart) => void }> = (
                   </IonCardSubtitle>
                 </IonCardHeader>
                 <IonCardContent>
-                  <IonRow>
-                    <IonCol>
-                      <IonButton fill="outline" size="default">
-                        <IonIcon icon={planetOutline} />
-                      </IonButton>
-                      <IonButton
-                        fill="solid"
-                        color="success"
-                        size="default"
-                        onClick={() => addToCart("01")}
-                      >
-                        <IonIcon icon={cartOutline} />
-                      </IonButton>
-                    </IonCol>
-                  </IonRow>
+                  <IonButton fill="outline" size="default">
+                    <IonIcon icon={planetOutline} />
+                  </IonButton>
+                  <IonButton
+                    fill="solid"
+                    color="success"
+                    size="default"
+                    onClick={() => addToCart("01")}
+                  >
+                    <IonIcon icon={cartOutline} />
+                  </IonButton>
                 </IonCardContent>
               </IonCard>
             </IonCol>
@@ -103,21 +99,17 @@ const Apparel: React.FC<{ passUpApp: (obj: CheckoutCart) => void }> = (
                   </IonCardSubtitle>
                 </IonCardHeader>
                 <IonCardContent>
-                  <IonRow>
-                    <IonCol>
-                      <IonButton fill="outline" size="default">
-                        <IonIcon icon={planetOutline} />
-                      </IonButton>
-                      <IonButton
-                        fill="solid"
-                        color="success"
-                        size="default"
-                        onClick={() => addToCart("02")}
-                      >
-                        <IonIcon icon={cartOutline} />
-                      </IonButton>
-                    </IonCol>
-                  </IonRow>
+                  <IonButton fill="outline" size="default">
+                    <IonIcon icon={planetOutline} />
+                  </IonButton>
+                  <IonButton
+                    fill="solid"
+                    color="success"
+                    size="default"
+                    onClick={() => addToCart("02")}
+                  >
+                    <IonIcon icon={cartOutline} />
+                  </IonButton>
                 </IonCardContent>
               </IonCard>
             </IonCol>
@@ -141,27 +133,17 @@ const Apparel: React.FC<{ passUpApp: (obj: CheckoutCart) => void }> = (
                   </IonCardSubtitle>
                 </IonCardHeader>
                 <IonCardContent>
-                  <IonRow>
-                    <IonCol className="ion-no-padding">
-                      <IonButton
-                        href="/cart"
-                        className="ion-no-padding"
-                        fill="outline"
-                        size="default"
-                      >
-                        <IonIcon icon={planetOutline} />
-                      </IonButton>
-                      <IonButton
-                        className="ion-no-padding"
-                        fill="solid"
-                        color="success"
-                        size="default"
-                        onClick={() => addToCart("03")}
-                      >
-                        <IonIcon icon={cartOutline} />
-                      </IonButton>
-                    </IonCol>
-                  </IonRow>
+                  <IonButton href="/cart" fill="outline" size="default">
+                    <IonIcon icon={planetOutline} />
+                  </IonButton>
+                  <IonButton
+                    fill="solid"
+                    color="success"
+                    size="default"
+                    onClick={() => addToCart("03")}
+                  >
+                    <IonIcon icon={cartOutline} />
+                  </IonButton>
                 </IonCardContent>
               </IonCard>
             </IonCol>

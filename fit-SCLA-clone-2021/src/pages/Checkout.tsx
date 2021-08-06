@@ -24,6 +24,7 @@ import "./Checkout.css";
 const Checkout: React.FC = () => {
   // alert for purchase
   const [alert, onAlert] = useState<boolean>();
+  
   const onPurchaseHandler = () => {
     onAlert(true);
   };
