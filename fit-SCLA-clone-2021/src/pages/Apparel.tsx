@@ -56,7 +56,7 @@ const Apparel: React.FC<{ passUpApp: (obj: CheckoutCart) => void }> = (
                 />
               </IonCard>
             </IonCol>
-            <IonCol className="ion-no-padding">
+            <IonCol className="ion-no-margin">
               <IonCard className="item-info-card">
                 <IonCardHeader>
                   <IonCardSubtitle>Mens T-Shirt</IonCardSubtitle>
