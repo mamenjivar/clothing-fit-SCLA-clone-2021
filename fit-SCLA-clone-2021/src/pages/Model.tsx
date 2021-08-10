@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { IonContent, IonPage, IonButton } from "@ionic/react";
 
 const Model: React.FC = () => {
-  const [rotateModel, setRotateModel] = useState<string>();
+  const [rotateModel, setRotateModel] = useState<string>(
+    "https://www.dmhaesthetics.com/website2015/wp-content/uploads/2015/03/19244704-Blank-Anatomy-Figure-Front-view-Stock-Photo-anatomy-human-body.jpg"
+  );
   const [count, setCount] = useState<number>(0);
 
   const modelViewArray = [
@@ -26,7 +28,7 @@ const Model: React.FC = () => {
     <IonPage>
       <IonContent>
         <h1>Model</h1>
-        <img src={rotateModel} alt="model rotating" width="200"/>
+        <img src={rotateModel} alt="model rotating" width="200" />
         <IonButton onClick={onRotateHandler}>Rotate</IonButton>
       </IonContent>
     </IonPage>

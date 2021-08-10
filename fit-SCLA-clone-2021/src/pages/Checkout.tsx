@@ -12,11 +12,14 @@ import {
   IonRow,
   IonAlert,
   IonHeader,
-  IonToolbar, 
+  IonToolbar,
   IonButtons,
   IonBackButton,
-  IonTitle
+  IonTitle,
 } from "@ionic/react";
+
+// components
+import ColoredLine from "../components/ColoredLine";
 
 // css
 import "./Checkout.css";
@@ -24,11 +27,11 @@ import "./Checkout.css";
 const Checkout: React.FC = () => {
   // alert for purchase
   const [alert, onAlert] = useState<boolean>();
-  
+
   const onPurchaseHandler = () => {
     onAlert(true);
   };
-  
+
   return (
     <Fragment>
       <IonAlert
@@ -37,18 +40,19 @@ const Checkout: React.FC = () => {
         buttons={[{ text: "Ok", handler: () => onAlert(false) }]}
       />
       <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonButtons slot="start">
-            <IonBackButton defaultHref="/brands"/>
-          </IonButtons>
-          <IonTitle>Order Summary</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+        <IonHeader>
+          <IonToolbar>
+            <IonButtons slot="start">
+              <IonBackButton defaultHref="/brands" />
+            </IonButtons>
+            <IonTitle>Checkout</IonTitle>
+          </IonToolbar>
+        </IonHeader>
         <IonContent>
-
           {/* loop through array and see orders */}
-          <h4>ACTIVE ORDERS</h4>
+          <h4>1 Item</h4>
+
+          <ColoredLine color="black" />
 
           <IonGrid>
             <IonRow>
@@ -73,6 +77,10 @@ const Checkout: React.FC = () => {
                 </IonCard>
               </IonCol>
             </IonRow>
+          </IonGrid>
+
+          <ColoredLine color="black" />
+          <IonGrid>
             <IonRow>
               <IonCol className="ion-text-center">
                 <IonButton
