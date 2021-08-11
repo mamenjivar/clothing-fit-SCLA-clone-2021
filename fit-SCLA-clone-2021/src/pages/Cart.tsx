@@ -24,9 +24,9 @@ const Cart: React.FC<{
   shoppingCart?: CheckoutCart[];
   removeCartItem: (uniqueId: string | undefined) => void;
 }> = (props) => {
-
   // removing item from cart by unique id
   const removeItemCart = (uniqueId: string | undefined) => {
+    console.log(uniqueId);
     props.removeCartItem(uniqueId);
   };
 
@@ -44,12 +44,12 @@ const Cart: React.FC<{
             <Fragment key={i.uniqueId}>
               <IonRow>
                 <IonCol>
-                  <IonCard key={i.uniqueId}>
+                  <IonCard>
                     <img src={i.image} alt="shirt 01" width="150" />
                   </IonCard>
                 </IonCol>
                 <IonCol className="ion-no-padding">
-                  <IonCard key={i.uniqueId} className="item-info-card">
+                  <IonCard className="item-info-card">
                     <IonCardHeader>
                       <IonCardSubtitle>{i.name}</IonCardSubtitle>
                       <IonCardSubtitle>{i.price}</IonCardSubtitle>
@@ -60,11 +60,13 @@ const Cart: React.FC<{
                           <IonButton fill="outline" size="default">
                             <IonIcon icon={planetOutline} />
                           </IonButton>
-                          <IonButton fill="solid" color="danger" size="default">
-                            <IonIcon
-                              icon={trashOutline}
-                              onClick={() => removeItemCart(i.uniqueId)}
-                            />
+                          <IonButton
+                            fill="solid"
+                            color="danger"
+                            size="default"
+                            onClick={() => removeItemCart(i.uniqueId)}
+                          >
+                            <IonIcon icon={trashOutline} />
                           </IonButton>
                         </IonCol>
                       </IonRow>

@@ -56,7 +56,8 @@ const App: React.FC = () => {
 
   // remove items from cart by unique id
   const removeFromCart = (uniqueId: string | undefined) => {
-    const removeItem = item.filter(i => i.uniqueId === uniqueId);
+    const removeItem = item.filter((i) => i.uniqueId !== uniqueId);
+    // console.log(removeItem);
     setItem(removeItem);
   };
 
