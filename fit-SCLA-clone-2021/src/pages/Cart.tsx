@@ -18,9 +18,14 @@ import { planetOutline, trashOutline } from "ionicons/icons";
 import "./Cart.css";
 
 // interface
-import CheckoutCart from '../util/CheckoutCart';
+import CheckoutCart from "../util/CheckoutCart";
 
 const Cart: React.FC<{ shoppingCart?: CheckoutCart[] }> = (props) => {
+  // removing item from cart by unique id
+  const removeItemCart = (id: string | undefined) => {
+    
+  }
+
   return (
     <IonPage>
       <IonContent>
@@ -35,12 +40,12 @@ const Cart: React.FC<{ shoppingCart?: CheckoutCart[] }> = (props) => {
             <Fragment>
               <IonRow>
                 <IonCol>
-                  <IonCard>
+                  <IonCard key={i.uniqueId}>
                     <img src={i.image} alt="shirt 01" width="150" />
                   </IonCard>
                 </IonCol>
                 <IonCol className="ion-no-padding">
-                  <IonCard className="item-info-card">
+                  <IonCard key={i.uniqueId} className="item-info-card">
                     <IonCardHeader>
                       <IonCardSubtitle>{i.name}</IonCardSubtitle>
                       <IonCardSubtitle>{i.price}</IonCardSubtitle>
@@ -52,7 +57,7 @@ const Cart: React.FC<{ shoppingCart?: CheckoutCart[] }> = (props) => {
                             <IonIcon icon={planetOutline} />
                           </IonButton>
                           <IonButton fill="solid" color="danger" size="default">
-                            <IonIcon icon={trashOutline} />
+                            <IonIcon icon={trashOutline} onClick={() => removeItemCart(i.uniqueId)}/>
                           </IonButton>
                         </IonCol>
                       </IonRow>

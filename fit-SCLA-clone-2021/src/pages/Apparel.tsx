@@ -18,6 +18,9 @@ import {
   IonTitle,
 } from "@ionic/react";
 import { planetOutline, cartOutline } from "ionicons/icons";
+// import { v4 as uuidv4 } from 'uuid';
+
+
 
 // interface
 import CheckoutCart from "../util/CheckoutCart";
@@ -28,9 +31,18 @@ import CLOTHES_TO_CHOOSE from "../util/CLOTHES_TO_CHOOSE";
 const Apparel: React.FC<{ passUpApp: (obj: CheckoutCart) => void }> = (
   props
 ) => {
+  const { v4: uuidv4 } = require('uuid');
+
   const addToCart = (id: string) => {
     let appareling = CLOTHES_TO_CHOOSE.filter((a) => a.id === id)[0];
-    props.passUpApp(appareling);
+    let object = {
+      uniqueId: uuidv4(),
+      shirtId: appareling.id,
+      image: appareling.image,
+      name: appareling.name,
+      price: appareling.price
+    }
+    props.passUpApp(object);
   };
 
   return (

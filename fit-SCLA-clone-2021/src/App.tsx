@@ -49,8 +49,14 @@ const App: React.FC = () => {
 
   let tabBar = showTabs ? undefined : { display: 'none' };
 
+  // adding item to cart from Apparel page
   const addToCart = (obj: CheckoutCart) => {
     setItem([...item, obj]);
+  }
+
+  // remove items from cart by unique id
+  const removeFromCart = () => {
+
   }
 
   return (

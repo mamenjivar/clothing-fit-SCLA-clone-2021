@@ -1,5 +1,6 @@
 interface CheckoutCart {
-  id?: string;
+  uniqueId?: string;
+  shirtId?: string;
   image?: string;
   name?: string;
   price?: string;
