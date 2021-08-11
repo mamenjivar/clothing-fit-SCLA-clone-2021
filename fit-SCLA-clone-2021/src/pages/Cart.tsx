@@ -24,7 +24,7 @@ const Cart: React.FC<{
   shoppingCart?: CheckoutCart[];
   removeCartItem: (uniqueId: string | undefined) => void;
 }> = (props) => {
-  
+
   // removing item from cart by unique id
   const removeItemCart = (uniqueId: string | undefined) => {
     props.removeCartItem(uniqueId);
