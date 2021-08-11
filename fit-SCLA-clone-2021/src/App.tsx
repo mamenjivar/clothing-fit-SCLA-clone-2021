@@ -40,24 +40,25 @@ import "@ionic/react/css/display.css";
 // import './theme/variables.css';
 
 // interface
-import CheckoutCart from './util/CheckoutCart';
-import UIContext from './util/Context-API-login';
+import CheckoutCart from "./util/CheckoutCart";
+import UIContext from "./util/Context-API-login";
 
 const App: React.FC = () => {
   const [item, setItem] = useState<CheckoutCart[]>([]);
   const { showTabs } = useContext(UIContext);
 
-  let tabBar = showTabs ? undefined : { display: 'none' };
+  let tabBar = showTabs ? undefined : { display: "none" };
 
   // adding item to cart from Apparel page
   const addToCart = (obj: CheckoutCart) => {
     setItem([...item, obj]);
-  }
+  };
 
   // remove items from cart by unique id
-  const removeFromCart = () => {
-
-  }
+  const removeFromCart = (uniqueId: string | undefined) => {
+    const removeItem = item.filter(i => i.uniqueId === uniqueId);
+    setItem(removeItem);
+  };
 
   return (
     <IonApp>
@@ -74,18 +75,18 @@ const App: React.FC = () => {
               <Brands />
             </Route>
             <Route exact path="/cart">
-              <Cart shoppingCart={item}/>
+              <Cart shoppingCart={item} removeCartItem={removeFromCart} />
             </Route>
             <Route exact path="/checkout">
               <Checkout />
-            </Route> 
+            </Route>
             <Route exact path="/apparel">
-              <Apparel passUpApp={addToCart}/>
+              <Apparel passUpApp={addToCart} />
             </Route>
             <Route exact path="/model">
               <Model />
             </Route>
-            <Redirect to="/brands" />
+            <Redirect to="/login" />
           </IonRouterOutlet>
 
           <IonTabBar slot="bottom" style={tabBar}>

@@ -20,11 +20,15 @@ import "./Cart.css";
 // interface
 import CheckoutCart from "../util/CheckoutCart";
 
-const Cart: React.FC<{ shoppingCart?: CheckoutCart[] }> = (props) => {
+const Cart: React.FC<{
+  shoppingCart?: CheckoutCart[];
+  removeCartItem: (uniqueId: string | undefined) => void;
+}> = (props) => {
+  
   // removing item from cart by unique id
-  const removeItemCart = (id: string | undefined) => {
-    
-  }
+  const removeItemCart = (uniqueId: string | undefined) => {
+    props.removeCartItem(uniqueId);
+  };
 
   return (
     <IonPage>
@@ -37,7 +41,7 @@ const Cart: React.FC<{ shoppingCart?: CheckoutCart[] }> = (props) => {
         {/* shirt with price grid */}
         <IonGrid>
           {props.shoppingCart?.map((i: CheckoutCart) => (
-            <Fragment>
+            <Fragment key={i.uniqueId}>
               <IonRow>
                 <IonCol>
                   <IonCard key={i.uniqueId}>
@@ -57,7 +61,10 @@ const Cart: React.FC<{ shoppingCart?: CheckoutCart[] }> = (props) => {
                             <IonIcon icon={planetOutline} />
                           </IonButton>
                           <IonButton fill="solid" color="danger" size="default">
-                            <IonIcon icon={trashOutline} onClick={() => removeItemCart(i.uniqueId)}/>
+                            <IonIcon
+                              icon={trashOutline}
+                              onClick={() => removeItemCart(i.uniqueId)}
+                            />
                           </IonButton>
                         </IonCol>
                       </IonRow>

@@ -36,7 +36,7 @@ const Apparel: React.FC<{ passUpApp: (obj: CheckoutCart) => void }> = (
   const addToCart = (id: string) => {
     let appareling = CLOTHES_TO_CHOOSE.filter((a) => a.id === id)[0];
     let object = {
-      uniqueId: uuidv4(),
+      uniqueId: uuidv4().toString(),
       shirtId: appareling.id,
       image: appareling.image,
       name: appareling.name,
