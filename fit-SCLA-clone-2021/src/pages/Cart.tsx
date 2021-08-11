@@ -53,6 +53,7 @@ const Cart: React.FC<{
                     <IonCardHeader>
                       <IonCardSubtitle>{i.name}</IonCardSubtitle>
                       <IonCardSubtitle>{i.price}</IonCardSubtitle>
+                      <IonCardSubtitle>{i.size}</IonCardSubtitle>
                     </IonCardHeader>
                     <IonCardContent>
                       <IonRow>
