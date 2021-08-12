@@ -19,6 +19,7 @@ import Apparel from "./pages/Apparel";
 import Model from "./pages/Model";
 import SizeMatch from "./pages/SizeMatch";
 import Login from "./pages/Login";
+import ChooseModel from "./pages/ChooseModel";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -86,6 +87,9 @@ const App: React.FC = () => {
             </Route>
             <Route exact path="/model">
               <Model />
+            </Route>
+            <Route exact path="/chooseModel">
+              <ChooseModel />
             </Route>
             <Redirect to="/login" />
           </IonRouterOutlet>

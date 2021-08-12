@@ -86,12 +86,12 @@ const Apparel: React.FC<{ passUpApp: (obj: CheckoutCart) => void }> = (
                     {CLOTHES_TO_CHOOSE[0].price}
                   </IonCardSubtitle>
                 </IonCardHeader>
-                <IonCardContent>
+                <IonCardContent className="ion-no-padding">
                   {/* need to work on the css to make it more stylish */}
                   <select value={selectedSize} onChange={onChangeHandler}>
-                    <option value="small">Small</option>
-                    <option value="medium">Medium</option>
-                    <option value="large">Large</option>
+                    <option value="S">Small</option>
+                    <option value="M">Medium</option>
+                    <option value="L">Large</option>
                   </select>
                   <IonButton fill="outline" size="default">
                     <IonIcon icon={planetOutline} />
@@ -118,7 +118,7 @@ const Apparel: React.FC<{ passUpApp: (obj: CheckoutCart) => void }> = (
                 />
               </IonCard>
             </IonCol>
-            <IonCol className="ion-no-padding">
+            <IonCol>
               <IonCard className="item-info-card">
                 <IonCardHeader>
                   <IonCardSubtitle>Mens T-Shirt</IonCardSubtitle>
@@ -126,7 +126,7 @@ const Apparel: React.FC<{ passUpApp: (obj: CheckoutCart) => void }> = (
                     {CLOTHES_TO_CHOOSE[1].price}
                   </IonCardSubtitle>
                 </IonCardHeader>
-                <IonCardContent>
+                <IonCardContent className="ion-no-padding">
                   {/* need to work on the css to make it more stylish */}
                   <select value={selectedSize} onChange={onChangeHandler}>
                     <option value="small">Small</option>
@@ -158,7 +158,7 @@ const Apparel: React.FC<{ passUpApp: (obj: CheckoutCart) => void }> = (
                 />
               </IonCard>
             </IonCol>
-            <IonCol className="ion-no-padding">
+            <IonCol>
               <IonCard className="item-info-card">
                 <IonCardHeader>
                   <IonCardSubtitle>Mens T-Shirt</IonCardSubtitle>
@@ -166,7 +166,7 @@ const Apparel: React.FC<{ passUpApp: (obj: CheckoutCart) => void }> = (
                     {CLOTHES_TO_CHOOSE[2].price}
                   </IonCardSubtitle>
                 </IonCardHeader>
-                <IonCardContent>
+                <IonCardContent className="ion-no-padding">
                   {/* need to work on the css to make it more stylish */}
                   <select value={selectedSize} onChange={onChangeHandler}>
                     <option value="small">Small</option>

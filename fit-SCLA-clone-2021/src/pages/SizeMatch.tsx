@@ -12,6 +12,8 @@ import {
 } from "@ionic/react";
 import UIContext from '../util/Context-API-login';
 
+import "./ChooseModel.css"
+
 const SizeMatch: React.FC = () => {
   const { setShowTabs } = useContext(UIContext);
 
@@ -61,7 +63,7 @@ const SizeMatch: React.FC = () => {
           </IonRow>
           <IonRow className="ion-padding-top">
             <IonCol>
-              <IonButton color="warning" fill="outline" href="/brands">
+              <IonButton color="warning" fill="outline" routerLink="/chooseModel">
                 Confirm
               </IonButton>
             </IonCol>

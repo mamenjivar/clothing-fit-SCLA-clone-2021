@@ -55,7 +55,7 @@ const Cart: React.FC<{
                       <IonCardSubtitle>{i.price}</IonCardSubtitle>
                       <IonCardSubtitle>{i.size}</IonCardSubtitle>
                     </IonCardHeader>
-                    <IonCardContent>
+                    <IonCardContent className="ion-no-padding">
                       <IonRow>
                         <IonCol>
                           <IonButton fill="outline" size="default">
