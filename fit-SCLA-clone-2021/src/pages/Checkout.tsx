@@ -61,11 +61,7 @@ const Checkout: React.FC<{ shoppingCart?: CheckoutCart[] }> = (props) => {
               <IonRow key={i.uniqueId}>
                 <IonCol>
                   <IonCard>
-                    <img
-                      src={i.image}
-                      alt="shirt 01"
-                      width="150"
-                    />
+                    <img src={i.image} alt="shirt 01" width="150" />
                   </IonCard>
                 </IonCol>
                 <IonCol>
@@ -87,7 +83,13 @@ const Checkout: React.FC<{ shoppingCart?: CheckoutCart[] }> = (props) => {
           <IonGrid>
             <IonRow>
               <IonCol>
-                <h4>Total: ${props.shoppingCart?.reduce((a, v) => a = a + Number(v.price), 0)}</h4>
+                <h4>
+                  Total: $
+                  {props.shoppingCart?.reduce(
+                    (a, v) => (a = a + Number(v.price)),
+                    0
+                  )}
+                </h4>
               </IonCol>
             </IonRow>
             <IonRow>
