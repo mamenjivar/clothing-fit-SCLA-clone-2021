@@ -26,8 +26,8 @@ const Cart: React.FC<{
 }> = (props) => {
   // removing item from cart by unique id
   const removeItemCart = (uniqueId: string | undefined) => {
-    // console.log(uniqueId);
     props.removeCartItem(uniqueId);
+    // console.log(uniqueId);
   };
 
   return (

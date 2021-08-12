@@ -80,7 +80,7 @@ const App: React.FC = () => {
               <Cart shoppingCart={item} removeCartItem={removeFromCart} />
             </Route>
             <Route exact path="/checkout">
-              <Checkout />
+              <Checkout shoppingCart={item}/>
             </Route>
             <Route exact path="/apparel">
               <Apparel passUpApp={addToCart} />

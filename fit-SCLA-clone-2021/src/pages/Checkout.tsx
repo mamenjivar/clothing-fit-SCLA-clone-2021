@@ -24,10 +24,12 @@ import ColoredLine from "../components/ColoredLine";
 // css
 import "./Checkout.css";
 
-const Checkout: React.FC = () => {
-  // alert for purchase
-  const [alert, onAlert] = useState<boolean>();
+// interface
+import CheckoutCart from "../util/CheckoutCart";
 
+const Checkout: React.FC<{ shoppingCart?: CheckoutCart[] }> = (props) => {
+  // alert for purchasing
+  const [alert, onAlert] = useState<boolean>();
   const onPurchaseHandler = () => {
     onAlert(true);
   };
@@ -50,37 +52,44 @@ const Checkout: React.FC = () => {
         </IonHeader>
         <IonContent>
           {/* loop through array and see orders */}
-          <h4>1 Item</h4>
+          <h4>{props.shoppingCart?.length} Item(s)</h4>
 
           <ColoredLine color="black" />
 
           <IonGrid>
-            <IonRow>
-              <IonCol>
-                <IonCard>
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0250/0714/products/Go-To-Tee-010100002C8-lake-green-flat_300x.jpg?v=1614195208"
-                    alt="shirt 01"
-                    width="150"
-                  />
-                </IonCard>
-              </IonCol>
-              <IonCol>
-                <IonCard className="item-info-card">
-                  <IonCardHeader>
-                    <IonCardSubtitle>Mens T-Shirt</IonCardSubtitle>
-                  </IonCardHeader>
-                  <IonCardContent>
-                    ID: 900632004 QT: 1 <br />
-                    Price: $19.99
-                  </IonCardContent>
-                </IonCard>
-              </IonCol>
-            </IonRow>
+            {props.shoppingCart?.map((i: CheckoutCart) => (
+              <IonRow key={i.uniqueId}>
+                <IonCol>
+                  <IonCard>
+                    <img
+                      src={i.image}
+                      alt="shirt 01"
+                      width="150"
+                    />
+                  </IonCard>
+                </IonCol>
+                <IonCol>
+                  <IonCard className="item-info-card">
+                    <IonCardHeader>
+                      <IonCardSubtitle>{i.name}</IonCardSubtitle>
+                    </IonCardHeader>
+                    <IonCardContent>
+                      ID: {i.shirtId} QT: 1 <br />
+                      Price: {i.price}
+                    </IonCardContent>
+                  </IonCard>
+                </IonCol>
+              </IonRow>
+            ))}
           </IonGrid>
 
           <ColoredLine color="black" />
           <IonGrid>
+            <IonRow>
+              <IonCol>
+                <h4>Total: ${props.shoppingCart?.reduce((a, v) => a = a + Number(v.price), 0)}</h4>
+              </IonCol>
+            </IonRow>
             <IonRow>
               <IonCol className="ion-text-center">
                 <IonButton
