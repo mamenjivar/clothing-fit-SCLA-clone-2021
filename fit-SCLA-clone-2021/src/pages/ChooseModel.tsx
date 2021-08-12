@@ -36,7 +36,7 @@ const ChooseModel: React.FC = () => {
     }
   };
 
-//   make model go left
+  //   make model go left
   const goLeft = () => {
     setSwitchModel(modelViewArray[count]);
 
@@ -57,8 +57,8 @@ const ChooseModel: React.FC = () => {
   });
 
   return (
-    <IonPage className="k">
-      <h1 className="ion-text-center">Model</h1>
+    <IonPage>
+      <h1 className="ion-text-center">Choose Model</h1>
 
       <IonCard></IonCard>
       <IonRow className="ion-text-center">

@@ -89,9 +89,9 @@ const Apparel: React.FC<{ passUpApp: (obj: CheckoutCart) => void }> = (
                 <IonCardContent className="ion-no-padding">
                   {/* need to work on the css to make it more stylish */}
                   <select value={selectedSize} onChange={onChangeHandler}>
-                    <option value="S">Small</option>
-                    <option value="M">Medium</option>
-                    <option value="L">Large</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
                   </select>
                   <IonButton fill="outline" size="default">
                     <IonIcon icon={planetOutline} />
@@ -173,7 +173,7 @@ const Apparel: React.FC<{ passUpApp: (obj: CheckoutCart) => void }> = (
                     <option value="medium">Medium</option>
                     <option value="large">Large</option>
                   </select>
-                  <IonButton href="/cart" fill="outline" size="default">
+                  <IonButton fill="outline" size="default">
                     <IonIcon icon={planetOutline} />
                   </IonButton>
                   <IonButton
