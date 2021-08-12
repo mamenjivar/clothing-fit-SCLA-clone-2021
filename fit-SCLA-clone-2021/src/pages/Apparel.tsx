@@ -25,12 +25,12 @@ import CheckoutCart from "../util/CheckoutCart";
 // LOCAL_DB
 import CLOTHES_TO_CHOOSE from "../util/CLOTHES_TO_CHOOSE";
 
+// unique id generator
+const { v4: uuidv4 } = require("uuid");
+
 const Apparel: React.FC<{ passUpApp: (obj: CheckoutCart) => void }> = (
   props
 ) => {
-  // unique id generator
-  const { v4: uuidv4 } = require("uuid");
-
   const [selectedSize, setSelectedSize] = useState<string>();
 
   // add item to cart
